@@ -34,7 +34,8 @@ def call(Map config = [:]) {
                     sh """
                         ${PYTHON_VERSION} -m venv ${VENV_NAME}
                         . ${VENV_NAME}/bin/activate
-                        pip install --upgrade pip
+                        sudo apt update
+                        sudo pip install --upgrade pip
                         # Install with specific versions to avoid conflicts
                         pip install Flask==2.0.1 Werkzeug==2.0.1
                         pip install pytest==7.4.0 pytest-cov==4.1.0
