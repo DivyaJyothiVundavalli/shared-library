@@ -154,20 +154,6 @@ def call(Map config = [:]) {
                 }
             }
         }
-
-        post {
-            success {
-                echo "Pipeline executed successfully!"
-            }
-            failure {
-                echo "Pipeline failed! Check the logs for details."
-                echo "rough content - stash ex"
-                echo "done"
-            }
-            always {
-                cleanup()
-            }
-        }
         post {
         always {
             notifyBuildStatus()
